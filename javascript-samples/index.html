@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>  
+    <head>
+        <title>Welcome to Javascript</title>
+        <script type="text/javascript">   
+            function greeting(message){
+                //DOM : Document Object Model  
+                //1.  Read the value from textbox  
+                var txtMessage  = document.querySelector("#txtGreeting");
+                //2. Get the control reference from DOM 
+                var controlMessage = document.querySelector("#container");  
+                controlMessage.innerHTML =  txtMessage.value; 
+
+
+            }
+        </script>  
+    </head>
+    <body>  
+        <div class="container control">   
+            <input type="text" id="txtGreeting" onkeyup="greeting()"/>
+            <button type="button" onclick="greeting()">Greet User</button>
+        </div>
+       <div id="container" class="container"> 
+
+       </div>
+    </body>
+</html>

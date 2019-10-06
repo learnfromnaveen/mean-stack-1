@@ -1,0 +1,13 @@
+In order to install lite-server follow below steps  
+
+1. run below command to create package.json file 
+    npm init -y
+2. run below command to install lite-server
+    npm install --save-dev lite-server 
+
+3. run below command to start the lite-server
+    lite-server  
+
+    note:  by default it serves the index.html file to browser  
+    
+

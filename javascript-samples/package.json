@@ -1,0 +1,15 @@
+{
+  "name": "javascript-samples",
+  "version": "1.0.0",
+  "description": "//declaring variable \r var a,b;\r //1. use var keyword  to declare a variable  \r //a. when declared outside the function it's a global variable  \r //b. when declared inside a function it's local to function  \r //c. when var keyword is not used the varables used inside or outside  \r //    function will always be global",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  }
+}
