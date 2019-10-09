@@ -1,0 +1,14 @@
+1. run below command 
+    
+    npm init -y 
+
+    Above command create package.json file  
+
+install lite-server ( development web server)
+
+//Below command installs the lite-server globally  
+npm install -g lite-server 
+
+//Below command installs the lite-server locally  
+npm install --save-dev lite-server
+

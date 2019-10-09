@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Javascript!!!</title>
+    <script type="text/javascript">
+        function greetUser(){
+            alert('Welcome to javascript!!!');
+        }
+
+        function loadContent(){
+
+            //1. create div  
+            var container = document.createElement("div"); 
+
+            //2. insert content into div 
+            var content = document.createElement("div");  
+            content.innerText = 'Welcome to Javascript';
+            container.appendChild(content);
+
+            //3. insert control into div
+            var control = document.createElement("button"); 
+            control.addEventListener("click", greetUser);
+            control.innerText = "Click Here";  
+            container.appendChild(control); 
+
+            //4. attact div to the document 
+            var dynamicContainer = document.querySelector(".dynamic-container");  
+            dynamicContainer.appendChild(container);
+        }
+    </script>
+  </head>
+  <body>
+    <div><a href='#' onclick='loadContent()'>Click here to load</a></div>
+    <div class="dynamic-container">
+
+    </div>
+  </body>
+</html>
