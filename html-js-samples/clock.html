@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timeout example</title>
+    <style type="text/css">
+        .clock-controls{ 
+            padding: 10px;
+            border: 1px solid grey;
+        }
+
+        .clock-display{ 
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size:  35px;
+            background-color: indigo;
+            color: white;
+        }
+    </style>
+    <script type="text/javascript">
+      function callBack() {
+        var container = document.querySelector("#result");
+
+        var d = new Date();
+
+        if (container) {
+          container.innerHTML = d;
+        }
+      }
+
+      var clockIntervalReferenceId = null;
+      function startClock() {
+        var interval = getInterval();
+
+        clockIntervalReferenceId = setInterval(callBack, interval);
+      }
+
+      function stopClock() {
+        if (clockIntervalReferenceId) {
+          clearInterval(clockIntervalReferenceId);
+        }
+      }
+
+      function getInterval() {
+        var txtInterval = document.querySelector("#txtClockInterval");
+
+        var interval = 1000;
+
+        if (txtInterval) {
+          interval = interval * parseInt(txtInterval.value);
+        }
+
+        return interval;
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <div class="clock-controls">
+        <input type="text" id="txtClockInterval" />
+        <button type="button" onclick="startClock()">Start</button>
+        <button type="button" onclick="stopClock()">Stop</button>
+      </div>
+      <div id="result" class="clock-display"></div>
+    </div>
+  </body>
+</html>

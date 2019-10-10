@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timeout example</title>
+    <script type="text/javascript">
+
+       function callBack(){ 
+       
+            console.log("3. function called from setTimeout after  " + Date.now());
+       
+        }
+
+
+       function run(){ 
+            //set the temout to 5000
+            console.log("1. before set timeout..." + Date.now());
+            setTimeout(callBack, 3000);
+            console.log("2. after set timeout..." + Date.now());
+       }
+    </script>
+  </head>
+  <body>
+    <div>
+        <div id="result">
+            
+        </div>
+        <button type="button" onclick="run()">Click here</button>
+    </div>
+  </body>
+</html>
