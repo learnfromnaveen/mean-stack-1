@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Person</title>
+    <script type="text/javascript">
+      var state = {
+        previous: -1,
+        current: 0
+      };
+
+      var persons = [];
+      var configuration = {
+        dataBindClassName: ".data-bind",
+        dataBindNodeAttribute: "data-bind"
+      };
+
+      function addPerson(person) {
+        var person = {};
+        state.previous = persons.length;
+
+        var nodes = document.querySelectorAll(configuration.dataBindClassName);
+        for (var i = 0; i < nodes.length; i++) {
+          var jsonKey = nodes[i].getAttribute(
+            configuration.dataBindNodeAttribute
+          );
+          if (jsonKey && jsonKey !== "") {
+            person[jsonKey] = nodes[i].value;
+          }
+        }
+
+        persons.push(person);
+        state.current = persons.length;
+      }
+
+      function displayPersonDetails(containerId) {
+        var template = getTemplate(persons);
+        var container = document.getElementById(containerId);
+        if (containerId) {
+          container.innerHTML = template;
+        }
+      }
+
+      function getTemplate(persons) {
+        var template = "";
+        persons.forEach(function(person) {
+          template +=
+            "<div>" + person.firstName + ", " + person.lastName + "</div>";
+        });
+        return template;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="control">
+      Firstname:<br />
+      <input type="text" data-bind="firstName" class="data-bind" />
+    </div>
+    <div class="control">
+      Lastname:<br />
+      <input type="text" data-bind="lastName" class="data-bind" />
+    </div>
+    <div class="control">
+      Email:<br />
+      <input type="text" data-bind="email" class="data-bind" />
+    </div>
+    <div class="control">
+      Mobile:<br />
+      <input type="text" data-bind="mobile" class="data-bind" />
+    </div>
+
+    <div class="action-controls">
+      <button type="button" onclick="addPerson()">Add</button>&nbsp;
+    </div>
+
+    <div
+      class="container-result"
+      id="containerResult"
+      style="padding: 10px; border: 1px solid grey;"
+    ></div>
+
+    <script type="text/javascript">
+      setInterval(function(containerId) {
+        if (state && state.previous < state.current) {
+        
+          state.previous = state.current;
+          displayPersonDetails(containerId);
+          console.log("Rerendering layout.....");
+        }
+      }, 1000, "containerResult");
+    </script>
+  </body>
+</html>
