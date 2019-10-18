@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Welcome to Javascript!!!</title>
+    <script type="text/javascript">
+       function loadOptions() {
+            var control = document.getElementById('options'); 
+            control.addEventListener('change', function(event){
+                var location  = event.target.value;  
+                if(location !== '-1'){
+                    var browser = document.getElementById("targetFrame");  
+                    browser.src =  location;
+                }   
+            });
+            var options  = [
+                    { text: '--Select--', value: '-1'}
+                    ,{ text: 'Google', value: 'https://www.google.com/webhp?igu=1' }
+                    ,{ text: 'Yahoo', value: 'https://www.yahoo.com' }
+                ];
+
+            var optionControl = function(option){
+                  var element = document.createElement('option');  
+                  element.value = option.value;  
+                  element.innerText = option.text;
+                  return element;
+            };  
+
+
+
+            
+           options.forEach( function(option){
+                control.appendChild(optionControl(option));
+           });
+
+       }
+    </script>
+  </head>
+  <body>
+    <div>
+    <select id='options'>
+
+    </select>
+</div>
+
+<div id="target">
+    <iframe id="targetFrame" src="" height="400px" width="800px;">
+
+    </iframe>
+</div>
+    <script> 
+        loadOptions(); 
+    </script>
+  </body>
+</html>
