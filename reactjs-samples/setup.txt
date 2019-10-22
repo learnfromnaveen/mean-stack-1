@@ -1,0 +1,10 @@
+1.  Install nodejs  
+    https://nodejs.org/en/download/
+
+    download LTS version which is recommended  
+
+2.  Check if node is installed or not 
+    node --version (or) node -v 
+
+3.  Download visual studio code 
+    https://code.visualstudio.com/

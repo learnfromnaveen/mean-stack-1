@@ -1,0 +1,13 @@
+# To create a new react app below is the command  
+# below command creats a new react app with name myapp
+
+npx create-react-app myapp  
+
+# if you are downloading app from the git hub  
+# after downloading get inside the root folder of  app  
+# then execute the below command  
+
+npm install
+
+# to run the react app below is the command  
+npm start
