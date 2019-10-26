@@ -1,0 +1,11 @@
+MongoDB Skip() Method
+
+Apart from limit() method, there is one more 
+method skip() which also accepts number type 
+argument and is used to skip the number of documents.
+
+db.COLLECTION_NAME.find().limit(NUMBER).skip(NUMBER)
+
+example: 
+db.article.find({'source.name' : 'CNBC'}, { '_id': 0, 'author':1}).limit(10).skip(2)
+

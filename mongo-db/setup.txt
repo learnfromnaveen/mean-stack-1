@@ -1,0 +1,10 @@
+Download and install mongodb for windows from the  following location  
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/#install-mdb-edition
+
+
+Download and install mongodb for mac from the  following location  
+
+https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/
+
+Download mondb compass from below location
+https://www.mongodb.com/download-center/compass

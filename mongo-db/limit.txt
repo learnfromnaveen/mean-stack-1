@@ -1,0 +1,20 @@
+The Limit() Method
+To limit the records in MongoDB,  you need to use limit() method. 
+The method accepts one number type argument,
+which is the number of documents that you want to be displayed.
+
+db.COLLECTION_NAME.find().limit(NUMBER)
+
+example:  
+Get top 10 documents from collection  
+db.article.find().limit(10);  
+
+Get top 10 names from the collection  
+db.article.find({}, { '_id' : 0, 'name' : 1}).limit(10)
+
+Get the name of author from article document who belong 
+to source CNBC ( 'source.name' : 'CNBC')
+
+db.article.find({'source.name': 'CNBC'}, {'_id': 0, 'author': 1})
+
+

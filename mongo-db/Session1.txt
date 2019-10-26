@@ -1,0 +1,43 @@
+1. To list the databases  command is  
+
+    show dbs  
+
+2. To use (switch) to database command is  
+
+    use <database_name> 
+
+    Note:  
+    If the database exist you will be switched to the database  
+    else it will create a new one  
+
+3. To know which database you are currently in  
+
+    db  
+
+4. To list the collections  ( table ) inside a database  
+
+    show collections  
+
+5.  To create a new collection 
+
+    syntax 1:  
+
+    db.createCollection(<collection_name>)
+
+    syntax 2:
+    db.createCollection(<collection_name>, options)
+
+    Refer the following link for further details  
+    https://www.tutorialspoint.com/mongodb/mongodb_create_collection.htm
+    
+
+
+6. To drop a collection  
+
+    db.<collection_name>.drop()  
+
+7. To drop database 
+
+    db.dropDatabase()
+
+

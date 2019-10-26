@@ -1,0 +1,4 @@
+Refer the following link  
+https://www.tutorialspoint.com/mongodb/mongodb_query_document.htm
+
+Notes will be updated shortly  

@@ -1,0 +1,80 @@
+1. Inserting document into collection  
+
+    db.COLLECTION_NAME.insert({KEY:VALUE})
+
+    example1:  
+    db.user.insert({name: 'Vivaan'});
+
+    //Inser more than one record  
+    db.user.insert(
+        [
+            { name: 'Smith' },
+            { name: 'Max' } 
+        ]
+    )
+
+    //Insert a complex document 
+    db.user.insert({
+        name: 'Jordan',  
+        dob: '01/01/1982',  
+        address:{ 
+            number: '#123', 
+            street: '#street',  
+            zipCode: '#zip code'  
+        }
+    })
+
+
+
+2. Querying document from collection  
+
+    db.COLLECTION_NAME.find(); 
+
+    example:  
+    //Retrive all documents from collection  
+    db.user.find();  
+
+    //format the retrieved document(s) from collection  
+    db.user.find().pretty();
+
+
+3. Filtering the document based on condition 
+    (or) Searching specific document from collection  
+
+    db.COLLECTION_NAME.find({key: value})
+
+    example:  
+
+    db.user.find({name : 'Smith'})
+
+3. Update a specific document 
+
+    db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATE_DATA)
+
+    example:  
+    db.user.update({ name: 'Smith'}, { $set: { name: 'Smith Jr.' }})
+    
+    Note: use updateMany to update multiple records 
+
+4. Deleting specifi document  
+
+    db.COLLECTION_NAME.remove({key: value})
+
+    example: 
+    db.user.remove({name: 'Smith'})
+
+5. Importing bulk data from a json file
+    
+    mongoimport  --db DATABASE_NAME --collection COLLECTION_NAME  --file FILE_PATH --jsonArray
+
+    mongoimport --host <host_name> --username <user_name> --password <password> --db <database_name> --collection <collection_name> --file <input_file>
+
+    example:  
+    mongoimport --db mydb --collection user --file c:\files\users.json --jsonArray
+    
+    note:
+    if mongo import is not work set the enviroment varable as given below  
+
+    set the user enviroment variable for path 
+
+    C:\Program Files\MongoDB\Server\4.1\bin
