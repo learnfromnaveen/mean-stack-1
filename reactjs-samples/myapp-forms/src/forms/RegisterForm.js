@@ -12,7 +12,8 @@ class RegisterForm extends React.Component {
       dob: "",
       gender: "",
       iAgree: false,  
-      showConfirmation: false
+      showConfirmation: false,  
+      isFormValid: false
     };
 
     this.onChange = this.onChange.bind(this);
@@ -30,6 +31,16 @@ class RegisterForm extends React.Component {
     this.setState({
       [key]: value
     });
+
+    if( key === 'iAgree' && value ){
+      this.validate(); 
+    }
+  }
+
+  validate(){ 
+    if(this.state.firstName !== ''){
+      this.setState({isFormValid: true});
+    }
   }
 
   handleSubmit(event) {
@@ -114,7 +125,7 @@ class RegisterForm extends React.Component {
           </div>
 
           <div className="control-action">
-            <button disabled={this.state.name === ""}>Submit</button>
+            <button disabled={this.state.isFormValid === false}>Submit</button>
           </div>
         </form>
         { this.state.showConfirmation ? <FormData formData={this.state} /> : '' }

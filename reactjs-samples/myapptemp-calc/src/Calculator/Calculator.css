@@ -1,0 +1,15 @@
+.calculator{ 
+    border: 1px solif grey;  
+    padding: 10px;
+    margin-left: 5px;
+    margin-right:5px;
+    border-radius: 10px;
+}
+
+.calculator > input[type='text']{
+    width:100%;
+    border-radius: 10px;
+    border: 1px solid grey;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
