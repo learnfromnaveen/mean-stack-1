@@ -1,0 +1,54 @@
+refer the following link  : 
+https://reacttraining.com/react-router/web/guides/quick-start
+
+
+Steps to set up routing
+
+1. install package react-router-dom
+
+   npm install react-router-dom
+
+
+2. Import the following as given below  
+
+   import  { 
+       BrowserRouter as Router, 
+       Switch, 
+       Route, 
+       Link, 
+       NavLink
+   }
+   from  'react-router-dom';
+
+3.  Wrap the JSX expression with Router ( BrowserRouter )
+
+     <Router>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Users</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/user">
+            <User/>
+          </Route>
+          <Route path="/users">
+            <Users />
+          </Route>
+          <Route path="/">
+            <Users />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
