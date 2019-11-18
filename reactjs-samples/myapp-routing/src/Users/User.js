@@ -52,11 +52,11 @@ export default class User extends React.Component {
 
   render() {
     return (
-        <div class="container">
+        <div className="container">
         <h2>{this.state.user.name} Details</h2>
-        <div class="panel panel-default">
-          <div class="panel-heading">Details of the user</div>
-          <div class="panel-body">
+        <div className="panel panel-default">
+          <div className="panel-heading">Details of the user</div>
+          <div className="panel-body">
               <table className='table'>
                 <tbody>
                     <tr>
@@ -74,11 +74,11 @@ export default class User extends React.Component {
                     <tr>
                         <td>Address</td>
                         <td>
-                            <ul class="list-group">
-                                <li class="list-group-item">{this.state.user.address.street}</li>
-                                <li class="list-group-item">{this.state.user.address.suite}</li>                                
-                                <li class="list-group-item">{this.state.user.address.city}</li>
-                                <li class="list-group-item">{this.state.user.address.zipcode}</li>
+                            <ul className="list-group">
+                                <li className="list-group-item">{this.state.user.address.street}</li>
+                                <li className="list-group-item">{this.state.user.address.suite}</li>                                
+                                <li className="list-group-item">{this.state.user.address.city}</li>
+                                <li className="list-group-item">{this.state.user.address.zipcode}</li>
                             </ul>
                         </td>
                     </tr>

@@ -68,7 +68,7 @@ export default class Users extends React.Component {
 
   userBody() {
     const rows = this.state.users.map(user => (
-      <tr>{this.userColumns(user)}</tr>
+      <tr key={user.id.toString()}>{this.userColumns(user)}</tr>
     ));
     return <tbody>{rows}</tbody>;
   }
